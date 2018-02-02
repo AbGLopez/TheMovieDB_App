@@ -9,7 +9,7 @@
 import RxSwift
 
 protocol PersonRepositoryProtocol {
-    func person(withIdentifier identifier: Int64) -> Observable<PersonDetail>
+    func person(withIdentifier identifier: Int64) -> Observable<PersonInfo>
 }
 
 final class PersonRepository: PersonRepositoryProtocol {
@@ -19,7 +19,7 @@ final class PersonRepository: PersonRepositoryProtocol {
         self.webService = webService
     }
     
-    func person(withIdentifier identifier: Int64) -> Observable<PersonDetail> {
-        return webService.load(PersonDetail.self, from: .person(identifier: identifier))
+    func person(withIdentifier identifier: Int64) -> Observable<PersonInfo> {
+        return webService.load(PersonInfo.self, from: .person(identifier: identifier))
     }
 }

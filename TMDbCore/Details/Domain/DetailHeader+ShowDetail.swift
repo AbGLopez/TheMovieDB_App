@@ -1,5 +1,5 @@
 //
-//  DetailHeader+ShowDetail.swift
+//  DetailInfo+ShowDetail.swift
 //  TMDbCore
 //
 //  Created by Abraham Gonzalez Lopez on 12/01/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension DetailHeader {
+extension DetailInfo {
     init(show: ShowDetail, dateFormatter: DateFormatter) {
         title         = show.title
         posterPath    = show.posterPath

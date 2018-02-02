@@ -1,5 +1,5 @@
 //
-//  PosterStripItem+CastMember.swift
+//  PosterItems+CastMember.swift
 //  TMDbCore
 //
 //  Created by Abraham Gonzalez Lopez on 12/01/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension PosterStripItem {
+extension PosterItems {
     init(castMember: Credits.CastMember) {
         identifier = castMember.identifier
         mediaType  = .person

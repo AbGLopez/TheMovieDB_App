@@ -9,6 +9,5 @@
 import Foundation
 
 protocol DetailNavigator {
-    // Se crea un método para mostar el detalle en base a un identificador y un tipo
     func showDetail(withIdentifier identifier: Int64, mediaType: MediaType)
 }

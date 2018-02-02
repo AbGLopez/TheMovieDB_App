@@ -16,7 +16,7 @@ final class PosterStripPresenter {
 		self.imageRepository = imageRepository
 	}
 
-	func present(item: PosterStripItem, in cell: PosterStripCell) {
+	func present(item: PosterItems, in cell: PosterStripCell) {
 		bindPoster(at: item.posterPath, to: cell)
 
 		cell.titleLabel.text = item.title

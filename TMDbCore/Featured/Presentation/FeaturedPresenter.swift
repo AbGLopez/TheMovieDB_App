@@ -29,7 +29,7 @@ final class FeaturedPresenter {
     
     weak var view: FeaturedView?
 
-    // Se inyecta la dependencia por constructor
+    // Inyectamos la dependencia por constructor
     init(detailNavigator: DetailNavigator,
          repository: FeaturedRepositoryProtocol) {
         self.detailNavigator  = detailNavigator
@@ -37,22 +37,20 @@ final class FeaturedPresenter {
     }
     
 	func didLoad() {
-        // Se configuran los diferentes titulos de la vista
+        // Sections
         view?.title = NSLocalizedString("HOME", comment: "")
 		view?.setShowsHeaderTitle(NSLocalizedString("ON TV", comment: ""))
-		view?.setMoviesHeaderTitle(NSLocalizedString("IN THEATERS", comment: ""))
+		view?.setMoviesHeaderTitle(NSLocalizedString("ON CINEMA", comment: ""))
 
 		loadContents()
 	}
 
 	func didSelect(show: Show) {
-		// Se llama detailNavigator
         detailNavigator.showDetail(withIdentifier: show.identifier,
                                    mediaType: .show)
 	}
 
 	func didSelect(movie: Movie) {
-        // Se llama detailNavigator
         detailNavigator.showDetail(withIdentifier: movie.identifier,
                                    mediaType: .movie)
     }

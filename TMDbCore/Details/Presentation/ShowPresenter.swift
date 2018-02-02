@@ -44,23 +44,23 @@ final class ShowPresenter: DetailPresenter {
             .disposed(by: disposeBag)
     }
     
-    func didSelect(item: PosterStripItem) {
+    func didSelect(item: PosterItems) {
         detailNavigator.showDetail(withIdentifier: item.identifier, mediaType: .person)
     }
     
     private func detailSections(for show: ShowDetail) -> [DetailSection] {
         var detailSections: [DetailSection] = [
-            .header(DetailHeader(show: show, dateFormatter: dateFormatter))
+            .header(DetailInfo(show: show, dateFormatter: dateFormatter))
         ]
         
         if let overview = show.overview {
             detailSections.append(.about(title: "Overview", detail: overview))
         }
         
-        let items = show.credits?.cast.map { PosterStripItem(castMember: $0) }
+        let items = show.credits?.cast.map { PosterItems(castMember: $0) }
         
         if let items = items {
-            detailSections.append(.posterStrip(title: "Cast", items: items))
+            detailSections.append(.posterSections(title: "Cast", items: items))
         }
         
         return detailSections

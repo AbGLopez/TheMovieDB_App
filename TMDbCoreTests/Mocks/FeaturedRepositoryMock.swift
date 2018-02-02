@@ -24,13 +24,11 @@ final class FeaturedRepositoryMock: FeaturedRepositoryProtocol {
     func moviesNowPlaying(region: String) -> Observable<[Movie]> {
         moviesNowPlayingCalled     = true
         moviesNowPlayingParameters = region
-        
         return moviesNowPlayingResult
     }
     
     func showsOnTheAir() -> Observable<[Show]> {
         showsOnTheAirCalled = true
-        
         return showsOnTheAirResult
     }
 }

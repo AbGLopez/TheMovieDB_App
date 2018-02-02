@@ -1,5 +1,5 @@
 //
-//  PersonDetail.swift
+//  PersonInfo.swift
 //  TMDbCore
 //
 //  Created by Abraham Gonzalez Lopez on 14/01/18.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-// Se crea un struct para mostrar el detalle de una persona
-struct PersonDetail: Decodable {
+struct PersonInfo: Decodable {
     let name           : String
     let identifier     : Int64
     let posterPath     : String?
@@ -17,11 +16,8 @@ struct PersonDetail: Decodable {
     let deathday       : String?
     let biography      : String?
     
-    // Los campos de creditos e imagenes son clases especificas para contener
-    // los sctruct necesarios para su adaptación
-    let credits        : CombinedCredits?
+    let credits        : AllCredits?
     let taggedImages   : Page<TaggedImages>?
-    
     
     private enum CodingKeys: String, CodingKey {
         case name
@@ -32,7 +28,6 @@ struct PersonDetail: Decodable {
         case birthday
         case deathday
         case biography
-        
         
     }
 }

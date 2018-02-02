@@ -16,7 +16,7 @@ final class DetailHeaderPresenter {
 		self.imageRepository = imageRepository
 	}
 
-	func present(header: DetailHeader, in view: DetailHeaderView) {
+	func present(header: DetailInfo, in view: DetailHeaderView) {
 		bindBackdrop(at: header.backdropPath, to: view)
 		bindPoster(at: header.posterPath, to: view)
 

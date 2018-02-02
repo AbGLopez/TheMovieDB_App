@@ -22,8 +22,7 @@ xcuserdata/
 *.xccheckout
 *.xcscmblueprint
 
-## Se omiten los ficheros de configuración
-*.xcconfig
+
 
 ## Obj-C/Swift specific
 *.hmap
