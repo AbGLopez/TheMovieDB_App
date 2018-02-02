@@ -8,7 +8,6 @@
 
 @testable import TMDbCore
 
-// Clase Mock para poder hacer pruebas
 final class DetailNavigatorMock: DetailNavigator {
     private(set) var showDetailCalled     = false
     private(set) var showDetailParameters : (Int64, MediaType)?

@@ -41,12 +41,12 @@ final class PersonPresenter: DetailPresenter {
             .disposed(by: disposeBag)
     }
     
-    func didSelect(item: PosterStripItem) {
+    func didSelect(item: PosterItems) {
     }
     
-    private func detailSections(for person: PersonDetail) -> [DetailSection] {
+    private func detailSections(for person: PersonInfo) -> [DetailSection] {
         var detailSections: [DetailSection] = [
-            .header(DetailHeader(person: person, dateFormatter: dateFormatter))
+            .header(DetailInfo(person: person, dateFormatter: dateFormatter))
         ]
         
         if let overview = person.biography {

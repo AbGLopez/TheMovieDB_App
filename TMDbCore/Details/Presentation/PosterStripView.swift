@@ -29,18 +29,18 @@ final class PosterStripView: UIView, NibLoadableView {
 
 	var presenter: PosterStripPresenter?
 
-	var items: [PosterStripItem] {
+	var items: [PosterItems] {
 		get { return _items.value }
 		set { _items.value = newValue }
 	}
 
-	var itemSelected: ControlEvent<PosterStripItem> {
-		return collectionView.rx.modelSelected(PosterStripItem.self)
+	var itemSelected: ControlEvent<PosterItems> {
+		return collectionView.rx.modelSelected(PosterItems.self)
 	}
 
 	let disposeBag = DisposeBag()
 
-	private let _items = Variable<[PosterStripItem]>([])
+	private let _items = Variable<[PosterItems]>([])
 
 	// MARK: - Overrides
 

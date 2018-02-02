@@ -9,7 +9,7 @@
 import Foundation
 
 // Struct necesario para recoger los objetos en los que ha participado la persona
-struct CombinedCredits: Decodable {
+struct AllCredits: Decodable {
     struct Credit : Decodable {
         let name         : String?
         let identifier   : Int64
@@ -28,8 +28,5 @@ struct CombinedCredits: Decodable {
             case mediaType  = "media_type"
         }
     }
-    
-    // Se devuelve la variable cast como un array de todos los objetos que contienen
-    // a la persona
     let cast: [Credit]
 }

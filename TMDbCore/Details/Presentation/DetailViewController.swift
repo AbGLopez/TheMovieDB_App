@@ -79,14 +79,14 @@ private extension DetailViewController {
 			view = headerView(with: header)
 		case .about(let title, let detail):
 			view = aboutView(withTitle: title, detail: detail)
-		case .posterStrip(let title, let items):
+		case .posterSections(let title, let items):
 			view = posterStrip(withTitle: title, items: items)
 		}
 
 		stackView.addArrangedSubview(view)
 	}
 
-	func headerView(with header: DetailHeader) -> UIView {
+	func headerView(with header: DetailInfo) -> UIView {
 		let headerView = DetailHeaderView.instantiate()
 		headerPresenter.present(header: header, in: headerView)
 
@@ -101,7 +101,7 @@ private extension DetailViewController {
 		return aboutView
 	}
 
-	func posterStrip(withTitle title: String, items: [PosterStripItem]) -> UIView {
+	func posterStrip(withTitle title: String, items: [PosterItems]) -> UIView {
 		let posterStripView = PosterStripView.instantiate()
 		posterStripView.presenter = posterStripPresenter
 		posterStripView.title = title

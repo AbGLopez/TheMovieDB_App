@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct DetailHeader {
+struct DetailInfo {
 	let title: String
 	let metadata: String
 	let posterPath: String?
 	let backdropPath: String?
 }
 
-struct PosterStripItem {
+struct PosterItems {
 	let identifier: Int64
 	let mediaType: MediaType
 
@@ -25,7 +25,7 @@ struct PosterStripItem {
 }
 
 enum DetailSection {
-	case header(DetailHeader)
+	case header(DetailInfo)
 	case about(title: String, detail: String)
-	case posterStrip(title: String, items: [PosterStripItem])
+	case posterSections(title: String, items: [PosterItems])
 }

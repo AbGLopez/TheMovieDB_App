@@ -17,5 +17,5 @@ protocol DetailPresenter: class {
 	weak var view: DetailView? { get set }
 
 	func didLoad()
-	func didSelect(item: PosterStripItem)
+	func didSelect(item: PosterItems)
 }

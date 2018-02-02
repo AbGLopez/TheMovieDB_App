@@ -9,7 +9,7 @@
 import RxSwift
 
 protocol MovieRepositoryProtocol {
-    func movie(withIdentifier identifier: Int64) -> Observable<MovieDetail>
+    func movie(withIdentifier identifier: Int64) -> Observable<MovieDetails>
 }
 
 final class MovieRepository: MovieRepositoryProtocol {
@@ -19,7 +19,7 @@ final class MovieRepository: MovieRepositoryProtocol {
         self.webService = webService
     }
     
-    func movie(withIdentifier identifier: Int64) -> Observable<MovieDetail> {
-        return webService.load(MovieDetail.self, from: .movie(identifier: identifier))
+    func movie(withIdentifier identifier: Int64) -> Observable<MovieDetails> {
+        return webService.load(MovieDetails.self, from: .movie(identifier: identifier))
     }
 }
